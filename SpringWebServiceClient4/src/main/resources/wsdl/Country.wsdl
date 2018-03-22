@@ -1,0 +1,192 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+	xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	name="LDMSDocWS" targetNamespace="http://tempuri.org/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://tempuri.org/Imports">
+			<xsd:import
+				schemaLocation="http://dms.muf.co.id/LiteDMS/WebServices/DocWS/LDMSDocWS.svc?xsd=xsd0"
+				namespace="http://tempuri.org/" />
+			<xsd:import
+				schemaLocation="http://dms.muf.co.id/LiteDMS/WebServices/DocWS/LDMSDocWS.svc?xsd=xsd1"
+				namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+			<xsd:import
+				schemaLocation="http://dms.muf.co.id/LiteDMS/WebServices/DocWS/LDMSDocWS.svc?xsd=xsd2"
+				namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="ILDMSDocWS_UploadImage_InputMessage">
+		<wsdl:part name="parameters" element="tns:UploadImage" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_UploadImage_OutputMessage">
+		<wsdl:part name="parameters" element="tns:UploadImageResponse" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_ViewImage_InputMessage">
+		<wsdl:part name="parameters" element="tns:ViewImage" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_ViewImage_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ViewImageResponse" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_deleteDocument_InputMessage">
+		<wsdl:part name="parameters" element="tns:deleteDocument" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_deleteDocument_OutputMessage">
+		<wsdl:part name="parameters" element="tns:deleteDocumentResponse" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_updateApp_InputMessage">
+		<wsdl:part name="parameters" element="tns:updateApp" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_updateApp_OutputMessage">
+		<wsdl:part name="parameters" element="tns:updateAppResponse" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_updateAppProspect_InputMessage">
+		<wsdl:part name="parameters" element="tns:updateAppProspect" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_updateAppProspect_OutputMessage">
+		<wsdl:part name="parameters" element="tns:updateAppProspectResponse" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_fieldLookupOperation_InputMessage">
+		<wsdl:part name="parameters" element="tns:fieldLookupOperation" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_fieldLookupOperation_OutputMessage">
+		<wsdl:part name="parameters" element="tns:fieldLookupOperationResponse" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_testConnection_InputMessage">
+		<wsdl:part name="parameters" element="tns:testConnection" />
+	</wsdl:message>
+	<wsdl:message name="ILDMSDocWS_testConnection_OutputMessage">
+		<wsdl:part name="parameters" element="tns:testConnectionResponse" />
+	</wsdl:message>
+	<wsdl:portType name="ILDMSDocWS">
+		<wsdl:operation name="UploadImage">
+			<wsdl:input wsaw:Action="http://tempuri.org/ILDMSDocWS/UploadImage"
+				message="tns:ILDMSDocWS_UploadImage_InputMessage" />
+			<wsdl:output wsaw:Action="http://tempuri.org/ILDMSDocWS/UploadImageResponse"
+				message="tns:ILDMSDocWS_UploadImage_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="ViewImage">
+			<wsdl:input wsaw:Action="http://tempuri.org/ILDMSDocWS/ViewImage"
+				message="tns:ILDMSDocWS_ViewImage_InputMessage" />
+			<wsdl:output wsaw:Action="http://tempuri.org/ILDMSDocWS/ViewImageResponse"
+				message="tns:ILDMSDocWS_ViewImage_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="deleteDocument">
+			<wsdl:input wsaw:Action="http://tempuri.org/ILDMSDocWS/deleteDocument"
+				message="tns:ILDMSDocWS_deleteDocument_InputMessage" />
+			<wsdl:output wsaw:Action="http://tempuri.org/ILDMSDocWS/deleteDocumentResponse"
+				message="tns:ILDMSDocWS_deleteDocument_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="updateApp">
+			<wsdl:input wsaw:Action="http://tempuri.org/ILDMSDocWS/updateApp"
+				message="tns:ILDMSDocWS_updateApp_InputMessage" />
+			<wsdl:output wsaw:Action="http://tempuri.org/ILDMSDocWS/updateAppResponse"
+				message="tns:ILDMSDocWS_updateApp_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="updateAppProspect">
+			<wsdl:input wsaw:Action="http://tempuri.org/ILDMSDocWS/updateAppProspect"
+				message="tns:ILDMSDocWS_updateAppProspect_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/ILDMSDocWS/updateAppProspectResponse"
+				message="tns:ILDMSDocWS_updateAppProspect_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="fieldLookupOperation">
+			<wsdl:input wsaw:Action="http://tempuri.org/ILDMSDocWS/fieldLookupOperation"
+				message="tns:ILDMSDocWS_fieldLookupOperation_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/ILDMSDocWS/fieldLookupOperationResponse"
+				message="tns:ILDMSDocWS_fieldLookupOperation_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="testConnection">
+			<wsdl:input wsaw:Action="http://tempuri.org/ILDMSDocWS/testConnection"
+				message="tns:ILDMSDocWS_testConnection_InputMessage" />
+			<wsdl:output wsaw:Action="http://tempuri.org/ILDMSDocWS/testConnectionResponse"
+				message="tns:ILDMSDocWS_testConnection_OutputMessage" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="BasicHttpBinding_ILDMSDocWS" type="tns:ILDMSDocWS">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="UploadImage">
+			<soap:operation soapAction="http://tempuri.org/ILDMSDocWS/UploadImage"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ViewImage">
+			<soap:operation soapAction="http://tempuri.org/ILDMSDocWS/ViewImage"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="deleteDocument">
+			<soap:operation soapAction="http://tempuri.org/ILDMSDocWS/deleteDocument"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateApp">
+			<soap:operation soapAction="http://tempuri.org/ILDMSDocWS/updateApp"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateAppProspect">
+			<soap:operation soapAction="http://tempuri.org/ILDMSDocWS/updateAppProspect"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="fieldLookupOperation">
+			<soap:operation soapAction="http://tempuri.org/ILDMSDocWS/fieldLookupOperation"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="testConnection">
+			<soap:operation soapAction="http://tempuri.org/ILDMSDocWS/testConnection"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="LDMSDocWS">
+		<wsdl:port name="BasicHttpBinding_ILDMSDocWS" binding="tns:BasicHttpBinding_ILDMSDocWS">
+			<soap:address
+				location="http://dms.muf.co.id/LiteDMS/WebServices/DocWS/LDMSDocWS.svc" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
